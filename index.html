@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCI Latam | Cierre Comercial</title>
+  <meta name="description" content="Landing transaccional de MCI Latam para cierre presencial, movil y pago inmediato.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Manrope:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --y: #ffef00;
+      --b: #060606;
+      --t: #f4f4eb;
+      --m: #b8b8a9;
+      --r: 24px;
+      --mx: 1160px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--t);
+      background: radial-gradient(circle at 20% 10%, rgba(255, 239, 0, .12), transparent 24%), linear-gradient(180deg, #090909, #020202);
+      overflow-x: hidden
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .22;
+      background: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mix-blend-mode: screen
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button {
+      font: inherit
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .wrap {
+      width: min(calc(100% - 1rem), var(--mx));
+      margin: auto
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .7rem 1rem;
+      border: 1px solid rgba(255, 239, 0, .24);
+      border-radius: 999px;
+      background: rgba(255, 239, 0, .08);
+      color: var(--y);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: .52rem;
+      height: .52rem;
+      border-radius: 999px;
+      background: var(--y);
+      box-shadow: 0 0 16px rgba(255, 239, 0, .6)
+    }
+
+    .btn,
+    .btn-alt,
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      border: none;
+      cursor: pointer;
+      transition: .18s
+    }
+
+    .btn:hover,
+    .btn-alt:hover,
+    .btn-line:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #ffef00, #e4c800);
+      color: #050505;
+      box-shadow: 0 18px 38px rgba(255, 239, 0, .18)
+    }
+
+    .btn-alt {
+      background: rgba(255, 255, 255, .05);
+      color: var(--t);
+      border: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .btn-line {
+      background: transparent;
+      color: var(--y);
+      border: 1px solid rgba(255, 239, 0, .25)
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r);
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .03), transparent), rgba(15, 15, 15, .96);
+      box-shadow: 0 22px 56px rgba(0, 0, 0, .42)
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      width: 88px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255, 239, 0, .9), transparent);
+      filter: blur(6px)
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(5, 5, 5, .8);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 78px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .9rem
+    }
+
+    .mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 239, 0, .32);
+      background: linear-gradient(135deg, rgba(255, 239, 0, .18), transparent)
+    }
+
+    .mark span {
+      font-family: "Oxanium", sans-serif;
+      font-weight: 800;
+      color: var(--y);
+      font-size: 1.15rem
+    }
+
+    .brand strong,
+    .section h2,
+    .hero h1,
+    .mini h3,
+    .plan h3,
+    .payment h3 {
+      font-family: "Oxanium", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -.05em
+    }
+
+    .brand small {
+      display: block;
+      color: var(--m);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .74rem
+    }
+
+    .actions {
+      display: flex;
+      gap: .7rem
+    }
+
+    .hero {
+      padding: 4rem 0 6rem;
+      position: relative;
+    }
+
+    .hero-main {
+      padding: 0;
+      margin: 0 auto;
+      max-width: 960px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 1.1rem 0 .9rem;
+      font-size: clamp(2.47rem, 6vw, 4.85rem);
+      line-height: .88;
+      font-weight: 800;
+      text-shadow: 0 0 40px rgba(255, 239, 0, 0.15);
+    }
+
+    .hero h1 {
+      margin: 1.1rem 0 .9rem;
+      font-size: clamp(2.9rem, 7vw, 5.7rem);
+      line-height: .88
+    }
+
+    .hero h1 span {
+      color: var(--y)
+    }
+
+    .hero h1 span.h1-small {
+      font-size: 0.85em !important;
+      color: #fff !important;
+      opacity: 1 !important;
+    }
+
+    .hero p {
+      color: var(--m);
+      line-height: 1.7;
+      font-size: 1.04rem
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin: 1.4rem 0 1.2rem
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem
+    }
+
+    .metric,
+    .mini {
+      padding: 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(255, 255, 255, .03)
+    }
+
+    .metric span,
+    .stat span,
+    .payment small,
+    .foot {
+      color: var(--m);
+      font-size: .78rem;
+      line-height: 1.5
+    }
+
+    .metric strong,
+    .stat strong {
+      display: block;
+      margin-top: .4rem;
+      color: var(--y);
+      font-family: "Oxanium", sans-serif;
+      font-size: 1.45rem
+    }
+
+    .side-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .side-badge {
+      padding: .8rem 1rem;
+      border-radius: 18px;
+      background: rgba(255, 239, 0, .1);
+      border: 1px solid rgba(255, 239, 0, .22);
+      text-align: right
+    }
+
+    .side-badge strong {
+      display: block;
+      color: var(--y);
+      font-family: "Oxanium", sans-serif;
+      font-size: 2rem
+    }
+
+    .bars {
+      display: grid;
+      gap: .9rem;
+      margin-top: 1rem
+    }
+
+    .barbox {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .barlabel {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: .78rem;
+      color: var(--m);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .5rem
+    }
+
+    .track {
+      height: .9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .06);
+      overflow: hidden
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(255, 110, 64, .9), rgba(255, 239, 0, .96))
+    }
+
+    .proof,
+    .social,
+    .pay-grid {
+      grid-template-columns: 1fr 1fr
+    }
+
+    .section {
+      padding: 0 0 5rem
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1.4rem
+    }
+
+    .section-head h2 {
+      margin: .9rem 0 0;
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: .95
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 28rem;
+      color: var(--m);
+      line-height: 1.7
+    }
+
+    .impact,
+    .proof-mini,
+    .testimonial,
+    .data-card,
+    .payment,
+    .plan,
+    .case {
+      padding: 1.3rem
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+      margin-top: 1.1rem
+    }
+
+    .stat {
+      padding: .9rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .plans,
+    .cases,
+    .data-grid {
+      display: grid;
+      gap: 1rem
+    }
+
+    .plans {
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .cases {
+      grid-template-columns: repeat(2, 1fr)
+    }
+
+    .data-grid {
+      grid-template-columns: repeat(2, 1fr)
+    }
+
+    .testimonial-last {
+      grid-column: 1 / -1;
+      width: calc(50% - 0.5rem);
+      justify-self: center;
+    }
+
+    .plan {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: .18s;
+      height: 100%;
+    }
+
+    .plan .btn,
+    .plan .btn-alt {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .plan.active,
+    .plan:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 239, 0, .32)
+    }
+
+    .plan.active {
+      background: linear-gradient(180deg, rgba(255, 239, 0, .1), transparent), rgba(15, 15, 15, .98)
+    }
+
+    .plan-top,
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      background: rgba(255, 239, 0, .1);
+      color: var(--y);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .price {
+      font-family: "Oxanium", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: .95
+    }
+
+    .muted {
+      color: var(--m);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .7rem
+    }
+
+    .list li,
+    .sum-list li {
+      display: flex;
+      gap: .7rem;
+      align-items: start;
+      line-height: 1.55
+    }
+
+    .list li::before,
+    .sum-list li::before {
+      content: "";
+      width: .65rem;
+      height: .65rem;
+      flex: none;
+      margin-top: .4rem;
+      border-radius: 999px;
+      background: var(--y)
+    }
+
+    .note {
+      padding: .9rem 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .05);
+      color: var(--m);
+      line-height: 1.6;
+      font-size: .84rem;
+      min-height: 5.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .case h3 {
+      margin: .3rem 0 0;
+      font-family: "Oxanium", sans-serif;
+      font-size: 1.35rem;
+      line-height: 1;
+      text-transform: uppercase
+    }
+
+    .case .badge {
+      padding: .7rem .9rem;
+      border-radius: 16px;
+      background: rgba(255, 239, 0, .08);
+      border: 1px solid rgba(255, 239, 0, .22);
+      text-align: right
+    }
+
+    .case .badge strong {
+      display: block;
+      color: var(--y);
+      font-family: "Oxanium", sans-serif
+    }
+
+    .case p,
+    .testimonial p,
+    .payment p {
+      color: var(--m);
+      line-height: 1.7
+    }
+
+    .drop {
+      display: grid;
+      gap: .45rem;
+      margin-top: 1rem
+    }
+
+    .drop-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--m);
+      font-size: .78rem;
+      text-transform: uppercase
+    }
+
+    .drop-track {
+      position: relative;
+      height: 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .06);
+      overflow: hidden
+    }
+
+    .before,
+    .after {
+      position: absolute;
+      inset: 0 auto 0 0;
+      border-radius: inherit
+    }
+
+    .before {
+      width: var(--before);
+      background: rgba(255, 110, 64, .85)
+    }
+
+    .after {
+      width: var(--after);
+      background: linear-gradient(90deg, rgba(199, 255, 54, .84), rgba(255, 239, 0, .96))
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      margin-top: 1rem
+    }
+
+    .avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ffef00, #ddc600);
+      color: #000;
+      font-family: "Oxanium", sans-serif;
+      font-weight: 800
+    }
+
+    .data-card strong {
+      display: block
+    }
+
+    .big {
+      display: block;
+      margin-top: .7rem;
+      font-family: "Oxanium", sans-serif;
+      font-size: 2rem;
+      color: var(--y)
+    }
+
+    .payment.summary {
+      position: sticky;
+      top: 92px;
+      background: radial-gradient(circle at top right, rgba(255, 239, 0, .16), transparent 34%), rgba(16, 16, 16, .98)
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .8rem;
+      margin: 1rem 0
+    }
+
+    .tab {
+      padding: 1rem;
+      border-radius: 20px;
+      text-align: left;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .08);
+      color: var(--t);
+      cursor: pointer
+    }
+
+    .tab.active {
+      background: rgba(255, 239, 0, .08);
+      border-color: rgba(255, 239, 0, .36)
+    }
+
+    .panel {
+      display: none;
+      gap: 1rem
+    }
+
+    .panel.active {
+      display: grid
+    }
+
+    .box {
+      padding: 1rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .07)
+    }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem
+    }
+
+    .logo {
+      min-width: 90px;
+      height: 52px;
+      padding: 0 1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s
+    }
+
+    .logo svg {
+      height: 24px;
+      width: auto;
+      max-width: 60px;
+    }
+
+    .logo:hover {
+      background: rgba(255, 255, 255, .07);
+      border-color: rgba(255, 255, 255, .15)
+    }
+
+    .bank {
+      display: grid;
+      gap: .8rem
+    }
+
+    .bank .item {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .bank span {
+      display: block;
+      color: var(--m);
+      font-size: .74rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: .35rem
+    }
+
+    .copy {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: .9rem
+    }
+
+    .sum-price {
+      margin: .8rem 0 0;
+      font-family: "Oxanium", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      line-height: .92
+    }
+
+    .sum-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .7rem
+    }
+
+    .status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .status strong {
+      display: block;
+      color: var(--y);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .8rem
+    }
+
+    .status span {
+      display: block;
+      margin-top: .3rem;
+      color: var(--m);
+      line-height: 1.55
+    }
+
+    .wa {
+      position: fixed;
+      right: 1rem;
+      bottom: 2rem;
+      z-index: 40;
+      width: 68px;
+      height: 68px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #25d366, #1da851);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, .42)
+    }
+
+    .wa svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff
+    }
+
+    .mobile {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 35;
+      display: none;
+      padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom));
+      background: rgba(5, 5, 5, .92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 239, 0, .18)
+    }
+
+    .mobile .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: .8rem;
+      align-items: center
+    }
+
+    .mobile strong {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .mobile span {
+      display: block;
+      color: var(--m);
+      font-size: .8rem
+    }
+
+    .footer {
+      padding: 0;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      background: #000;
+      line-height: 0;
+      position: relative;
+    }
+
+    .footer::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background: transparent;
+    }
+
+    .footer img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+    .footer p,
+    .footer a {
+      color: var(--m);
+      font-size: .82rem
+    }
+
+    .faq-item {
+      padding: 1.2rem 1.5rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .08);
+      cursor: pointer;
+      margin-bottom: 1rem;
+      transition: background 0.2s;
+    }
+
+    .faq-item:hover {
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .faq-item summary {
+      font-family: "Oxanium", sans-serif;
+      font-size: 1.15rem;
+      color: var(--y);
+      list-style: none;
+      position: relative;
+      padding-right: 2rem;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+    }
+
+    .faq-item[open] summary::after {
+      content: "-";
+    }
+
+    .faq-item p {
+      color: var(--m);
+      line-height: 1.7;
+      margin-top: 1rem;
+      margin-bottom: 0;
+      font-size: .95rem;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1060px) {
+      :root {
+        --mx: 960px
+      }
+
+      .hero-grid,
+      .proof,
+      .social,
+      .pay-grid {
+        grid-template-columns: 1fr
+      }
+
+      .plans,
+      .cases,
+      .data-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .payment.summary {
+        position: static
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .header .wrap,
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .actions {
+        display: none
+      }
+
+      .hero-actions,
+      .copy {
+        width: 100%;
+        flex-direction: column
+      }
+
+      .actions a,
+      .hero-actions a,
+      .hero-actions button,
+      .copy button,
+      .btn,
+      .btn-alt,
+      .btn-line {
+        width: 100%;
+        min-height: 54px;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem
+      }
+
+      .metrics,
+      .stats,
+      .plans,
+      .cases,
+      .data-grid,
+      .proof,
+      .social,
+      .tabs {
+        grid-template-columns: 1fr
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 4rem)
+      }
+
+      .mobile {
+        display: none !important
+      }
+
+      .wa {
+        bottom: 2rem;
+        width: 56px;
+        height: 56px;
+      }
+
+      .wa svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .testimonial-last {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .side-badge strong {
+        font-size: 1.8rem
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero-main,
+      .hero-side,
+      .impact,
+      .proof-mini,
+      .testimonial,
+      .data-card,
+      .payment,
+      .plan,
+      .case {
+        padding: 1rem
+      }
+
+      .sum-price {
+        font-size: 2.2rem
+      }
+
+      .side-badge strong {
+        font-size: 1.6rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="#hero">
+        <img src="Logo mci.png" alt="MCI Latam" style="height: 48px; width: auto; object-fit: contain;">
+        <div><strong>MCI Latam</strong><small></small></div>
+      </a>
+      <div class="actions"><a class="btn-alt" href="#planes">Ver planes</a><a class="btn" href="#pago">Cerrar hoy</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <article class="hero-main">
+          <h1><span class="h1-small">¿Tu negocio es</span> <span
+              style="color: rgba(255, 239, 0, 0.45);">invisible</span> <span class="h1-small">o es una</span> <span
+              style="color: var(--y);">maquina de ventas?</span></h1>
+          <p
+            style="max-width: 650px; margin: 1.2rem auto; font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--m); line-height: 1.6;">
+            Ciencia de datos y marketing real para locales, restaurantes y especialistas. No vendemos likes. Generamos
+            dinero.</p>
+          <div class="hero-actions" style="justify-content: center; margin-top: 2rem;"><a class="btn" href="#planes"
+              style="min-width: 280px;">Activar mi crecimiento</a></div>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="section" id="planes">
+      <div class="wrap">
+        <div class="section-head" style="flex-direction: column; align-items: center; text-align: center;">
+          <div><span class="eyebrow">Planes a la medida: Estrategia y Ventas</span>
+            <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-top: 1rem;">Selecciona el nivel de crecimiento que
+              vas a activar</h2>
+          </div>
+          <div class="metrics"
+            style="margin-top: 1.5rem; justify-content: center; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="metric" style="padding: 0.8rem 1.2rem; text-align: left;"><span>Plazo mínimo</span><strong>3
+                meses</strong></div>
+            <div class="metric" style="padding: 0.8rem 1.2rem; text-align: left;"><span>Pago
+                inmediato</span><strong>Stripe + SPEI</strong></div>
+          </div>
+        </div>
+        <div class="plans">
+          <article class="card plan active" data-plan-card="redes">
+            <div class="plan-top">
+              <div><span class="tag">Plan 01</span>
+                <h3>Redes Sociales Pro</h3>
+              </div>
+              <div>
+                <div class="price">$10k</div>
+                <div class="muted">MXN mensual o pago unico</div>
+              </div>
+            </div>
+            <p>Presencia constante con anuncios incluidos para mantener flujo de prospectos y reconocimiento de marca.
+            </p>
+            <ul class="list">
+              <li>3 publicaciones semanales con diseño y copy alineados a objetivos.</li>
+              <li>Gestion de pauta en Facebook e Instagram con inversión de $2,000 MXN incluida.</li>
+              <li>Plazo minimo de 1 mes.</li>
+            </ul>
+            <p class="note">El cliente proporciona fotos y videos. No incluye respuesta a mensajes, comentarios o
+              gestion de citas.</p>
+            <button class="btn" data-plan-select="redes" type="button">Activar mi presencia digital</button>
+          </article>
+          <article class="card plan" data-plan-card="web">
+            <div class="plan-top">
+              <div><span class="tag">Plan 02</span>
+                <h3>Web &amp; Conversión</h3>
+              </div>
+              <div>
+                <div class="price">$20k</div>
+                <div class="muted">MXN mensual</div>
+              </div>
+            </div>
+            <p>Sitio propio, sistema de citas y campañas de tráfico para convertir visitas en agenda o pago.</p>
+            <ul class="list">
+              <li>Sitio web informativo y transaccional.</li>
+              <li>Sistema de agendamiento integrado.</li>
+              <li>Campañas en Google o Meta segun el caso.</li>
+            </ul>
+            <p class="note">No incluye manejo de redes sociales, posts semanales ni e-commerce masivo de productos
+              físicos.</p>
+            <button class="btn-alt" data-plan-select="web" type="button">Construir mi maquina de ventas</button>
+          </article>
+          <article class="card plan" data-plan-card="crm">
+            <div class="plan-top">
+              <div><span class="tag">Plan 03</span>
+                <h3>CRM &amp; IA Atención Oportuna</h3>
+              </div>
+              <div>
+                <div class="price">$30k</div>
+                <div class="muted">MXN mensual</div>
+              </div>
+            </div>
+            <p>Pipeline comercial con asistente inteligente 24/7 para atender, calificar y agendar sin intervención
+              manual.</p>
+            <ul class="list">
+              <li>Pipeline visual de prospecto, seguimiento, cita y referidos.</li>
+              <li>Chatbot con IA para respuesta inmediata.</li>
+              <li>Automatización del proceso comercial.</li>
+            </ul>
+            <p class="note">No incluye inversión en campañas. Trabaja con la base de datos o demanda que el cliente ya
+              tenga.</p>
+            <button class="btn-alt" data-plan-select="crm" type="button">Automatizar mi negocio con IA</button>
+          </article>
+          <article class="card plan" data-plan-card="crm-comercial">
+            <div class="plan-top">
+              <div><span class="tag">Plan 04</span>
+                <h3>CRM &amp; IA Transaccional</h3>
+              </div>
+              <div style="transform: translateX(-15px);">
+                <div class="price">$40k</div>
+                <div class="muted">MXN mensual</div>
+              </div>
+            </div>
+            <p>Estrategia con enfoque transcaccional, generando demanda directa y ventas automatizadas.</p>
+            <ul class="list">
+              <li>Cierre de transacción completo sin intervención manual.</li>
+              <li>Campañas de conversión directa a ventas.</li>
+              <li>Sistema CRM para seguimiento transaccional.</li>
+              <li>Asistente IA enfocado a cobros y cierres rápidos.</li>
+            </ul>
+            <p class="note">Diseñado para negocios que buscan retorno inmediato y generación constante de ingresos.</p>
+            <button class="btn-alt" data-plan-select="crm-comercial" type="button">Generar ventas ahora</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section" id="casos">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Casos de exito MCI Latam</span>
+            <h2>Reto vs. resultado</h2>
+          </div>
+        </div>
+        <div class="cases">
+          <article class="card case">
+            <div class="case-top">
+              <div><span class="tag">Automotriz</span>
+                <img src="LogoPremierStudio.png" alt="Premiere Studio"
+                  style="height: 48px; width: auto; object-fit: contain; margin-top: 0.8rem; display: block;">
+                <h3>Premiere Studio Autodetailing</h3>
+              </div>
+              <div class="badge"><small>Ingresos</small><strong>$600k+</strong></div>
+            </div>
+            <p>Generación de 285 clientes nuevos con una estrategia completa desde auditoría hasta automatización
+              comercial.</p>
+            <div class="drop" style="--before:82%;--after:42%">
+              <div class="drop-row"><span>$500 MXN</span><span>$210 MXN</span></div>
+              <div class="drop-track">
+                <div class="before"></div>
+                <div class="after"></div>
+              </div>
+            </div>
+          </article>
+          <article class="card case">
+            <div class="case-top">
+              <div><span class="tag">Salud y dental</span>
+                <img src="Clinica Dental.png" alt="Dental Art"
+                  style="height: 48px; width: auto; object-fit: contain; margin-top: 0.8rem; display: block;">
+                <h3>Dental Art + Dr. Miguel Barron</h3>
+              </div>
+              <div class="badge"><small>CAC</small><strong>-60%</strong></div>
+            </div>
+            <p>Segmentación avanzada por tratamiento y automatización de agendamiento para bajar costos y atraer mejores
+              pacientes.</p>
+            <div class="drop" style="--before:88%;--after:34%">
+              <div class="drop-row"><span>$520 MXN</span><span>$190 MXN</span></div>
+              <div class="drop-track">
+                <div class="before"></div>
+                <div class="after"></div>
+              </div>
+            </div>
+          </article>
+          <article class="card case">
+            <div class="case-top">
+              <div><span class="tag">Servicios profesionales</span>
+                <img src="Tax GROUP.png" alt="Rangel Tax Group"
+                  style="height: 48px; width: auto; object-fit: contain; margin-top: 0.8rem; display: block;">
+                <h3>Rangel Tax Group</h3>
+              </div>
+              <div class="badge"><small>CAC</small><strong>$6.3 USD</strong></div>
+            </div>
+            <p>Video marketing y campañas educativas para generar confianza digital. La base de clientes se triplico.
+            </p>
+            <div class="drop" style="--before:82%;--after:31%">
+              <div class="drop-row"><span>$19.72 USD</span><span>$6.3 USD</span></div>
+              <div class="drop-track">
+                <div class="before"></div>
+                <div class="after"></div>
+              </div>
+            </div>
+          </article>
+          <article class="card case">
+            <div class="case-top">
+              <div><span class="tag">E-commerce y nutricion</span>
+                <img src="SmartSetps.png" alt="Smart Steps Nutrition"
+                  style="height: 48px; width: auto; object-fit: contain; margin-top: 0.8rem; display: block;">
+                <h3>Smart Steps Nutrition</h3>
+              </div>
+              <div class="badge"><small>Clave</small><strong>Pago + logistica</strong></div>
+            </div>
+            <p>Implementacion completa del modelo comercial digital con rebranding, e-commerce y pasarela de pago
+              automatizada.</p>
+            <div class="drop" style="--before:76%;--after:54%">
+              <div class="drop-row"><span>Manual</span><span>Automatizado</span></div>
+              <div class="drop-track">
+                <div class="before"></div>
+                <div class="after"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="section-head" style="margin-top: 4rem;">
+          <div><span class="eyebrow">Testimonios</span>
+            <h2>Lo que dicen nuestros clientes</h2>
+          </div>
+        </div>
+        <div class="cases testimonial-grid">
+          <article class="card testimonial" style="padding: 0; line-height: 0;">
+            <img src="1.png" alt="Testimonio 1" style="width: 100%; height: auto; display: block;">
+          </article>
+          <article class="card testimonial" style="padding: 0; line-height: 0;">
+            <img src="8.png" alt="Testimonio 2" style="width: 100%; height: auto; display: block;">
+          </article>
+          <article class="card testimonial testimonial-last" style="padding: 0; line-height: 0;">
+            <img src="Post 5.png" alt="Testimonio 3" style="width: 100%; height: auto; display: block;">
+          </article>
+        </div>
+        <div class="section-head" style="margin-top: 5rem; justify-content: center; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span class="eyebrow"
+              style="margin-bottom: 1rem;">FAQ</span>
+            <h2
+              style="margin:0;font-size:clamp(1.8rem,4vw,3.2rem);line-height:.95;font-family:'Oxanium',sans-serif;text-transform:uppercase;letter-spacing:-.05em">
+              Preguntas Frecuentes<br></h2>
+          </div>
+        </div>
+        <div style="max-width:800px; margin:0 auto;">
+          <details class="faq-item">
+            <summary>1. ¿Qué resuelven nuestros servicios?</summary>
+            <p>Resolvemos la desconexión crítica entre tener visibilidad (seguidores, 'likes') y generar ventas reales y
+              predecibles. Diagnosticamos por qué tu ecosistema digital actual no está convirtiendo y ejecutamos la
+              solución táctica que necesitas: desde profesionalizar tu Presencia y Conversión web, hasta eliminar
+              cuellos de botella operativos mediante IA & Automatización, asegurando que cada peso invertido se traduzca
+              en oportunidades de negocio calificadas y agendadas.</p>
+          </details>
+          <details class="faq-item">
+            <summary>2. ¿Qué necesito para aplicar?</summary>
+            <p>El requisito principal es estar listo para profesionalizar tu proceso comercial digital. Si ya has
+              invertido en anuncios o has intentado "llevar tus redes" por cuenta propia y no has llegado a las metas de
+              venta, es el momento de aplicar. Necesitas tener un negocio operativo y la disposición para delegar la
+              estrategia digital en socios expertos como nosotros, que implementarán la infraestructura tecnológica que
+              tu negocio necesita para escalar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>3. ¿Es para empresas grandes o pequeñas?</summary>
+            <p>Nuestros servicios están diseñados para ser 100% escalables, por lo que ayudamos a negocios de todos los
+              tamaños. Para MiPyMEs y negocios locales que necesitan visibilidad rápida, nuestros planes de Presencia y
+              Conversión son ideales. Para locales comerciales o empresas en crecimiento con altos flujos de prospectos
+              a clientes, el plan de IA & Automatización es la solución operativa. Diagnosticamos tu escala actual y
+              customizamos el ecosistema tecnológico para que se adapte perfectamente a tus necesidades de ventas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="section">
+      <div class="wrap social">
+        <div style="display:grid;gap:1rem">
+          <div><span class="eyebrow">Prueba social</span>
+            <h2
+              style="margin:.9rem 0 0;font-size:clamp(2rem,5vw,3.7rem);line-height:.95;font-family:'Oxanium',sans-serif;text-transform:uppercase;letter-spacing:-.05em">
+              Resultados reales: De invisibles a imparables</h2>
+          </div>
+        </div>
+        <div class="data-grid">
+          <article class="card data-card"><strong>Grafico CAC</strong><span>Reduccion visible del costo de adquisicion
+              para reforzar la decision.</span><span class="big">-65%</span></article>
+          <article class="card data-card"><strong>Ciencia de datos</strong><span>Lectura de embudo, CAC y decisiones por
+              metrica.</span><span class="big">ROI</span></article>
+          <article class="card data-card"><strong>SEM / SEO</strong><span>tráfico de intencion y posicionamiento
+              comercial.</span><span class="big">Lead Flow</span></article>
+          <article class="card data-card"><strong>Confianza de cierre</strong><span>Pago seguro, condiciones claras y
+              decision inmediata.</span><span class="big">Ahora</span></article>
+        </div>
+      </div>
+    </section> -->
+
+    <!--  <section class="section" id="pago">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Seccion critica</span>
+            <h2>Selecciona tu plan y activa tu crecimiento hoy</h2>
+          </div>
+        </div>
+        <div class="pay-grid">
+          <article class="card payment">
+            <small>Paso 1</small>
+            <h3 style="margin:.35rem 0 0;font-size:2rem;line-height:1">Elige como vas a pagar</h3>
+            <p>Usa tarjeta para suscripcion o pago unico por Stripe, o transferencia Banorte para cierres en Mexico.</p>
+            <div class="tabs">
+              <button class="tab active" data-payment-tab="stripe" type="button"><strong>Tarjeta /
+                  Internacional</strong><span>Suscripcion recurrente o pago unico.</span></button>
+              <button class="tab" data-payment-tab="transfer" type="button"><strong>Transferencia
+                  electronica</strong><span>Cuenta unica Banorte Mexico.</span></button>
+            </div>
+            <div class="panel active" data-payment-panel="stripe">
+              <div class="box"><strong style="display:block">Paga con Stripe</strong>
+                <div style="display:grid;gap:.8rem;margin-top:1rem"><a class="btn" data-stripe-primary
+                    href="#pago">Activar mi presencia digital</a><a class="btn-alt" data-stripe-secondary
+                    href="#pago">Solicitar pago unico</a></div>
+              </div>
+              <div class="box"><strong style="display:block">Medios aceptados</strong>
+                <div class="logos" style="margin-top:.9rem">
+                  <div class="logo">
+                    <svg viewBox="0 0 64 24" fill="#f4f4eb" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.66 22l3.41-13.63H20.5L17.09 22h-5.43zm16.89-13.2c-1.02-.39-2.61-.82-4.57-.82-5.02 0-8.56 2.55-8.6 6.21-.04 2.7 2.53 4.21 4.45 5.11 1.98.93 2.65 1.51 2.64 2.34-.02 1.27-1.59 1.85-3.05 1.85-2.04 0-3.12-.3-4.77-1l-.65-.31-.69 4.14c1.17.52 3.33.97 5.57.99 5.34 0 8.81-2.53 8.87-6.45.02-2.15-1.34-3.79-4.29-5.14-.28-.13-.45-.24-.45-.39 0-.25.3-.52.94-.52.78 0 1.35.17 1.85.38l.22.1.8-4.13zM46.72 13.91l2-.8c.45-.18.78-.45.78-1a1.21 1.21 0 00-1.28-1.21c-.81 0-1.39.24-2.16.51l-.54-3.41c1.17-.46 2.8-.81 4.54-.81 4.12 0 6.94 1.94 6.94 5.05a5.28 5.28 0 01-.01.35l-2.09 10.41s-.29.41-1.2.41H50.5s-.35 0-.54-.36l-.32-1.31h-.1c-.96.96-2.54 1.67-4.48 1.67-3.23 0-5.73-1.85-5.73-4.71 0-3.9 4.67-5.02 7.39-5.02l2.35.1v1.1a1.29 1.29 0 01-1.38 1.34l-1.03-.02a5.72 5.72 0 00-2.47.45 1.23 1.23 0 00-.77 1.13c0 .88.85 1.43 2.1 1.43 1.47 0 2.82-.71 3.51-1.74l.11-.2V13.91zM9.47 13.59c-.06-.5-.34-.96-.75-1.25l-.26-.16L4.02 9h4.31l1.14 4.59.85-4.59h4.31l-5.16 13.13H4.31l5.16-9z" />
+                    </svg>
+                  </div>
+                  <div class="logo">
+                    <svg viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="12" r="9" fill="#EB001B" fill-opacity="0.8" />
+                      <circle cx="22" cy="12" r="9" fill="#F79E1B" fill-opacity="0.8" />
+                      <path d="M16 4.5a8.9 8.9 0 0 0-2 7.5 8.9 8.9 0 0 0 2 7.5 8.9 8.9 0 0 0 2-7.5 8.9 8.9 0 0 0-2-7.5z"
+                        fill="#FF5F00" />
+                    </svg>
+                  </div>
+                  <div class="logo">
+                    <svg viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="24" rx="3" fill="#007BC1" />
+                      <path
+                        d="M5 9h2l1 3 1-3h2v6H9v-3l-1 3H7l-1-3v3H5V9zm9 0h3c1 0 2 1 2 2v2a2 2 0 0 1-2 2h-3V9zm1 1v4h2l1-1v-2l-1-1h-2zm10-1h-4v6h4v-1h-3v-1h2v-1h-2v-1h3v-1l.5.5z"
+                        fill="white" />
+                    </svg>
+                  </div>
+                  <div class="logo">
+                    <svg viewBox="0 0 60 25" fill="#f4f4eb" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M53.84 9.17c-2.82 0-4.63 2.05-4.63 4.88 0 3.12 1.95 5.09 4.83 5.09 1.45 0 2.5-.32 3.19-.68l.02-2.14c-.66.33-1.46.51-2.42.51-.97 0-1.74-.46-1.89-1.34h4.41c.01-.13.02-.32.02-.5 0-3.32-1.71-5.82-3.53-5.82zm-1.12 3.39c.12-.76.71-1.33 1.54-1.33.86 0 1.27.6 1.27 1.33h-2.81zm-9.08-3.08c-1.13 0-1.87.56-2.26.96l-.1-.77h-3.41v13.06l3.75-.79v-2.16c.46.36 1.23.82 2.36.82 2.37 0 4.67-1.84 4.67-5.59-.01-3.69-2.3-5.53-5.01-5.53zm-1.07 8.07c-1.11 0-1.68-.69-1.68-1.57 0-.89.57-1.58 1.68-1.58 1.13 0 1.68.69 1.68 1.58 0 .88-.55 1.57-1.68 1.57zm-11.83-8.07a3.49 3.49 0 0 0-2.42 1.14l-.12-.95H25.8v10.57h3.75v-6.91c0-1.15.63-1.75 1.57-1.75.25 0 .42.02.66.08l.02-3.75c-.27-.08-.45-.11-.8-.11zm-5.63-2.1c0-1.13-1-1.84-2.22-1.84a5.9 5.9 0 0 0-2.31.52v3.08c.7-.35 1.51-.59 2.11-.59.39 0 .54.12.54.29 0 .28-.4.36-1.06.47-1.88.31-3.64.71-3.64 2.82 0 1.83 1.3 2.76 2.92 2.76.92 0 1.67-.32 2.15-.79l.1.6h3.41V7.38zm-3.6 8.35c-.47 0-.71-.23-.71-.6s.46-.5 1.1-.6c.5-.08.97-.13 1.35-.19v1.01c-.42.27-.92.38-1.74.38zm-1.58-13l3.75-.79V.5l-3.75.79v1.44zm-5.02 4.44l-3.41.72V.5l-3.75.79v10.51h7.16V7.17z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel" data-payment-panel="transfer">
+              <div class="box"><strong style="display:block">Transferencia Banorte Mexico</strong>
+                <div class="bank" style="margin-top:1rem">
+                  <div class="item"><span>Banco</span><strong>BANORTE Mexico</strong></div>
+                  <div class="item"><span>Cuenta CLABE</span><strong id="clabe">072180004847632802</strong></div>
+                  <div class="item"><span>Tarjeta</span><strong id="card-number">4189143014937968</strong></div>
+                </div>
+                <div class="copy"><button class="btn-alt" data-copy="clabe" type="button">Copiar CLABE</button><button
+                    class="btn-alt" data-copy="card-number" type="button">Copiar tarjeta</button></div>
+              </div>
+            </div>
+          </article>
+          <aside class="card payment summary">
+            <small>Paso 2</small>
+            <h3 id="sum-name" style="margin:.35rem 0 0;font-size:2rem;line-height:1">Redes Sociales Pro</h3>
+            <div class="sum-price" id="sum-price">$10,000 MXN</div>
+            <p id="sum-copy">Presencia constante con anuncios incluidos y un mensaje claro para activar hoy mismo.</p>
+            <ul class="sum-list" id="sum-list">
+              <li>3 publicaciones semanales con diseño y copy.</li>
+              <li>Pauta incluida para Facebook e Instagram.</li>
+              <li>Plazo minimo de 3 meses.</li>
+            </ul>
+            <button class="btn" id="sum-cta" style="width:100%;margin-top:1rem" type="button">Activar mi presencia
+              digital</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main> -->
+
+    <footer class="footer">
+      <img src="Footer.png" alt="Hagamoslo posible">
+    </footer>
+
+    <a class="wa" id="wa-link" href="https://wa.me/5210000000000?text=Quiero%20activar%20mi%20plan%20con%20MCI%20Latam"
+      target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.09-.47-.14-.67.15-.19.3-.76.97-.94 1.17-.17.19-.34.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.08 1.76-.72 2-1.41.25-.69.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35zM12.05 22h-.01c-1.72 0-3.41-.46-4.88-1.31l-.35-.21-3.63.95.97-3.55-.23-.36a9.55 9.55 0 0 1-1.46-5.1C2.47 7.17 6.67 3 12.02 3c2.57 0 4.99 1 6.8 2.82a9.47 9.47 0 0 1 2.81 6.75C21.62 17.83 17.41 22 12.05 22zm8.08-18.1A11.46 11.46 0 0 0 12.03.5C5.75.5.62 5.62.62 11.92c0 2 .52 3.95 1.51 5.67L.5 23.5l6.02-1.58c1.66.91 3.54 1.39 5.51 1.39h.01c6.29 0 11.41-5.12 11.41-11.41 0-3.05-1.18-5.91-3.32-8z">
+        </path>
+      </svg>
+    </a>
+
+    <div class="mobile">
+      <div class="wrap">
+        <div><strong id="mobile-name">Redes Sociales Pro</strong><span id="mobile-price">$10,000 MXN</span></div><a
+          class="btn" href="#pago" id="mobile-cta">Cerrar hoy</a>
+      </div>
+    </div>
+
+    <script>
+      const plans = { redes: { name: "Redes Sociales Pro", price: "$10,000 MXN", copy: "Presencia constante con anuncios incluidos y un mensaje claro para activar hoy mismo.", cta: "Activar mi presencia digital", points: ["3 publicaciones semanales con diseño y copy.", "Pauta incluida para Facebook e Instagram.", "Plazo minimo de 3 meses."], stripe: "#pago", single: "#pago", wa: "Quiero activar el plan Redes Sociales Pro con MCI Latam." }, web: { name: "Web & Conversion", price: "$20,000 MXN", copy: "Sitio propio, agenda integrada y campañas de tráfico para convertir interes en citas o ventas.", cta: "Construir mi maquina de ventas", points: ["Sitio web informativo o transaccional.", "Sistema de agendamiento integrado.", "Campañas en Google o Meta."], stripe: "#pago", single: "#pago", wa: "Quiero construir mi maquina de ventas con MCI Latam." }, crm: { name: "CRM & IA Atención Oportuna", price: "$30,000 MXN", copy: "Pipeline comercial y asistente 24/7 para responder, calificar y agendar automaticamente.", cta: "Automatizar mi negocio con IA", points: ["Pipeline visual de prospecto, seguimiento, cita y referidos.", "Chatbot con IA para atencion inmediata.", "automatización para seguimiento y cierre."], stripe: "#pago", single: "#pago", wa: "Quiero automatizar mi negocio con plan CRM & IA Atención Oportuna." }, 'crm-comercial': { name: "CRM & IA Transaccional", price: "$40,000 MXN", copy: "Estrategia enfocada a lo transaccional, generando demanda directa y ventas automatizadas.", cta: "Generar ventas ahora", points: ["Cierre de transacción completo sin intervención manual.", "Campañas de conversión directa a ventas.", "Sistema CRM para seguimiento transaccional.", "Asistente IA enfocado a cobros y cierres rápidos."], stripe: "#pago", single: "#pago", wa: "Quiero generar ventas con el plan CRM & IA Transaccional." } };
+      const sumName = document.getElementById("sum-name"), sumPrice = document.getElementById("sum-price"), sumCopy = document.getElementById("sum-copy"), sumList = document.getElementById("sum-list"), sumCta = document.getElementById("sum-cta"), wa = document.getElementById("wa-link"), mName = document.getElementById("mobile-name"), mPrice = document.getElementById("mobile-price"), mCta = document.getElementById("mobile-cta"), stripePrimary = document.querySelector("[data-stripe-primary]"), stripeSecondary = document.querySelector("[data-stripe-secondary]");
+      function setPlan(key) { const p = plans[key]; document.querySelectorAll("[data-plan-card]").forEach(c => c.classList.toggle("active", c.dataset.planCard === key)); document.querySelectorAll("[data-plan-select]").forEach(b => { const on = b.dataset.planSelect === key; b.classList.toggle("btn", on); b.classList.toggle("btn-alt", !on) }); sumName.textContent = p.name; sumPrice.textContent = p.price; sumCopy.textContent = p.copy; sumCta.textContent = p.cta; mName.textContent = p.name; mPrice.textContent = p.price; mCta.textContent = p.cta; stripePrimary.textContent = p.cta; stripePrimary.href = p.stripe; stripeSecondary.href = p.single; sumList.innerHTML = ""; p.points.forEach(point => { const li = document.createElement("li"); li.textContent = point; sumList.appendChild(li) }); wa.href = `https://wa.me/5210000000000?text=${encodeURIComponent(p.wa)}`; }
+      function setPayment(tab) { document.querySelectorAll("[data-payment-tab]").forEach(b => b.classList.toggle("active", b.dataset.paymentTab === tab)); document.querySelectorAll("[data-payment-panel]").forEach(p => p.classList.toggle("active", p.dataset.paymentPanel === tab)); }
+      document.querySelectorAll("[data-plan-select]").forEach(btn => btn.addEventListener("click", () => { setPlan(btn.dataset.planSelect); document.getElementById("pago").scrollIntoView({ behavior: "smooth", block: "start" }) }));
+      document.querySelectorAll("[data-payment-tab]").forEach(btn => btn.addEventListener("click", () => setPayment(btn.dataset.paymentTab)));
+      document.querySelectorAll("[data-copy]").forEach(btn => btn.addEventListener("click", async () => { const id = btn.dataset.copy, el = document.getElementById(id); if (!el) return; const original = btn.textContent; try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = "Copiado" } catch { btn.textContent = "No se pudo copiar" } setTimeout(() => { btn.textContent = original }, 1400) }));
+      setPlan("redes"); setPayment("stripe");
+    </script>
+</body>
+
+</html>
