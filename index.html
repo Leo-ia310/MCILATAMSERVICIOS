@@ -830,18 +830,9 @@
 
     .footer {
       padding: 0;
-      border-top: 1px solid rgba(255, 255, 255, .06);
       background: #000;
       line-height: 0;
       position: relative;
-    }
-
-    .footer::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 10;
-      background: transparent;
     }
 
     .footer img {
@@ -855,11 +846,7 @@
       pointer-events: none;
     }
 
-    .footer p,
-    .footer a {
-      color: var(--m);
-      font-size: .82rem
-    }
+
 
     .faq-item {
       padding: 1.2rem 1.5rem;
@@ -1036,8 +1023,8 @@
         <img src="Logo mci.png" alt="MCI Latam" style="height: 48px; width: auto; object-fit: contain;">
         <div><strong>MCI Latam</strong><small></small></div>
       </a>
-      <div class="actions"><a class="btn-alt" href="#planes">Ver planes</a><a class="btn" href="#pago">Cerrar hoy</a>
-      </div>
+      <!--<div class="actions"><a class="btn-alt" href="#planes">Ver planes</a><a class="btn" href="#pago">Cerrar hoy</a>
+      </div>-->
     </div>
   </header>
 
@@ -1094,7 +1081,9 @@
             </ul>
             <p class="note">El cliente proporciona fotos y videos. No incluye respuesta a mensajes, comentarios o
               gestion de citas.</p>
-            <button class="btn" data-plan-select="redes" type="button">Activar mi presencia digital</button>
+            <a class="btn" href="https://buy.stripe.com/28EeVd2GP4R21gFcSt7g40G" target="_blank"
+              style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Activar mi
+              presencia digital</a>
           </article>
           <article class="card plan" data-plan-card="web">
             <div class="plan-top">
@@ -1114,7 +1103,9 @@
             </ul>
             <p class="note">No incluye manejo de redes sociales, posts semanales ni e-commerce masivo de productos
               físicos.</p>
-            <button class="btn-alt" data-plan-select="web" type="button">Construir mi maquina de ventas</button>
+            <a class="btn-alt" href="https://buy.stripe.com/cNi28r4OXfvG4sRdWx7g40H" target="_blank"
+              style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Construir mi
+              maquina de ventas</a>
           </article>
           <article class="card plan" data-plan-card="crm">
             <div class="plan-top">
@@ -1135,7 +1126,9 @@
             </ul>
             <p class="note">No incluye inversión en campañas. Trabaja con la base de datos o demanda que el cliente ya
               tenga.</p>
-            <button class="btn-alt" data-plan-select="crm" type="button">Automatizar mi negocio con IA</button>
+            <a class="btn-alt" href="https://buy.stripe.com/14A9AT6X50AM6AZ2dP7g40I" target="_blank"
+              style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Automatizar mi
+              negocio con IA</a>
           </article>
           <article class="card plan" data-plan-card="crm-comercial">
             <div class="plan-top">
@@ -1155,7 +1148,9 @@
               <li>Asistente IA enfocado a cobros y cierres rápidos.</li>
             </ul>
             <p class="note">Diseñado para negocios que buscan retorno inmediato y generación constante de ingresos.</p>
-            <button class="btn-alt" data-plan-select="crm-comercial" type="button">Generar ventas ahora</button>
+            <a class="btn-alt" href="https://buy.stripe.com/6oUbJ1ftB2IUcZncSt7g40J" target="_blank"
+              style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Generar ventas
+              ahora</a>
           </article>
         </div>
       </div>
@@ -1407,39 +1402,40 @@
           </aside>
         </div>
       </div>
-    </section>
-  </main> -->
+    </section> -->
+  </main>
 
-    <footer class="footer">
-      <img src="Footer.png" alt="Hagamoslo posible">
-    </footer>
+  <footer class="footer">
+    <img src="Footer.png" alt="Hagamoslo posible">
+  </footer>
 
-    <a class="wa" id="wa-link" href="https://wa.me/5210000000000?text=Quiero%20activar%20mi%20plan%20con%20MCI%20Latam"
-      target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.09-.47-.14-.67.15-.19.3-.76.97-.94 1.17-.17.19-.34.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.08 1.76-.72 2-1.41.25-.69.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35zM12.05 22h-.01c-1.72 0-3.41-.46-4.88-1.31l-.35-.21-3.63.95.97-3.55-.23-.36a9.55 9.55 0 0 1-1.46-5.1C2.47 7.17 6.67 3 12.02 3c2.57 0 4.99 1 6.8 2.82a9.47 9.47 0 0 1 2.81 6.75C21.62 17.83 17.41 22 12.05 22zm8.08-18.1A11.46 11.46 0 0 0 12.03.5C5.75.5.62 5.62.62 11.92c0 2 .52 3.95 1.51 5.67L.5 23.5l6.02-1.58c1.66.91 3.54 1.39 5.51 1.39h.01c6.29 0 11.41-5.12 11.41-11.41 0-3.05-1.18-5.91-3.32-8z">
-        </path>
-      </svg>
-    </a>
+  <a class="wa" id="wa-link"
+    href="https://api.whatsapp.com/send/?phone=525560866455&text=Hola%2C+quiero+ayuda+para+vender+m%C3%A1s&type=phone_number&app_absent=0"
+    target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.09-.47-.14-.67.15-.19.3-.76.97-.94 1.17-.17.19-.34.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.08 1.76-.72 2-1.41.25-.69.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35zM12.05 22h-.01c-1.72 0-3.41-.46-4.88-1.31l-.35-.21-3.63.95.97-3.55-.23-.36a9.55 9.55 0 0 1-1.46-5.1C2.47 7.17 6.67 3 12.02 3c2.57 0 4.99 1 6.8 2.82a9.47 9.47 0 0 1 2.81 6.75C21.62 17.83 17.41 22 12.05 22zm8.08-18.1A11.46 11.46 0 0 0 12.03.5C5.75.5.62 5.62.62 11.92c0 2 .52 3.95 1.51 5.67L.5 23.5l6.02-1.58c1.66.91 3.54 1.39 5.51 1.39h.01c6.29 0 11.41-5.12 11.41-11.41 0-3.05-1.18-5.91-3.32-8z">
+      </path>
+    </svg>
+  </a>
 
-    <div class="mobile">
-      <div class="wrap">
-        <div><strong id="mobile-name">Redes Sociales Pro</strong><span id="mobile-price">$10,000 MXN</span></div><a
-          class="btn" href="#pago" id="mobile-cta">Cerrar hoy</a>
-      </div>
+  <div class="mobile">
+    <div class="wrap">
+      <div><strong id="mobile-name">Redes Sociales Pro</strong><span id="mobile-price">$10,000 MXN</span></div><a
+        class="btn" href="#pago" id="mobile-cta">Cerrar hoy</a>
     </div>
+  </div>
 
-    <script>
-      const plans = { redes: { name: "Redes Sociales Pro", price: "$10,000 MXN", copy: "Presencia constante con anuncios incluidos y un mensaje claro para activar hoy mismo.", cta: "Activar mi presencia digital", points: ["3 publicaciones semanales con diseño y copy.", "Pauta incluida para Facebook e Instagram.", "Plazo minimo de 3 meses."], stripe: "#pago", single: "#pago", wa: "Quiero activar el plan Redes Sociales Pro con MCI Latam." }, web: { name: "Web & Conversion", price: "$20,000 MXN", copy: "Sitio propio, agenda integrada y campañas de tráfico para convertir interes en citas o ventas.", cta: "Construir mi maquina de ventas", points: ["Sitio web informativo o transaccional.", "Sistema de agendamiento integrado.", "Campañas en Google o Meta."], stripe: "#pago", single: "#pago", wa: "Quiero construir mi maquina de ventas con MCI Latam." }, crm: { name: "CRM & IA Atención Oportuna", price: "$30,000 MXN", copy: "Pipeline comercial y asistente 24/7 para responder, calificar y agendar automaticamente.", cta: "Automatizar mi negocio con IA", points: ["Pipeline visual de prospecto, seguimiento, cita y referidos.", "Chatbot con IA para atencion inmediata.", "automatización para seguimiento y cierre."], stripe: "#pago", single: "#pago", wa: "Quiero automatizar mi negocio con plan CRM & IA Atención Oportuna." }, 'crm-comercial': { name: "CRM & IA Transaccional", price: "$40,000 MXN", copy: "Estrategia enfocada a lo transaccional, generando demanda directa y ventas automatizadas.", cta: "Generar ventas ahora", points: ["Cierre de transacción completo sin intervención manual.", "Campañas de conversión directa a ventas.", "Sistema CRM para seguimiento transaccional.", "Asistente IA enfocado a cobros y cierres rápidos."], stripe: "#pago", single: "#pago", wa: "Quiero generar ventas con el plan CRM & IA Transaccional." } };
-      const sumName = document.getElementById("sum-name"), sumPrice = document.getElementById("sum-price"), sumCopy = document.getElementById("sum-copy"), sumList = document.getElementById("sum-list"), sumCta = document.getElementById("sum-cta"), wa = document.getElementById("wa-link"), mName = document.getElementById("mobile-name"), mPrice = document.getElementById("mobile-price"), mCta = document.getElementById("mobile-cta"), stripePrimary = document.querySelector("[data-stripe-primary]"), stripeSecondary = document.querySelector("[data-stripe-secondary]");
-      function setPlan(key) { const p = plans[key]; document.querySelectorAll("[data-plan-card]").forEach(c => c.classList.toggle("active", c.dataset.planCard === key)); document.querySelectorAll("[data-plan-select]").forEach(b => { const on = b.dataset.planSelect === key; b.classList.toggle("btn", on); b.classList.toggle("btn-alt", !on) }); sumName.textContent = p.name; sumPrice.textContent = p.price; sumCopy.textContent = p.copy; sumCta.textContent = p.cta; mName.textContent = p.name; mPrice.textContent = p.price; mCta.textContent = p.cta; stripePrimary.textContent = p.cta; stripePrimary.href = p.stripe; stripeSecondary.href = p.single; sumList.innerHTML = ""; p.points.forEach(point => { const li = document.createElement("li"); li.textContent = point; sumList.appendChild(li) }); wa.href = `https://wa.me/5210000000000?text=${encodeURIComponent(p.wa)}`; }
-      function setPayment(tab) { document.querySelectorAll("[data-payment-tab]").forEach(b => b.classList.toggle("active", b.dataset.paymentTab === tab)); document.querySelectorAll("[data-payment-panel]").forEach(p => p.classList.toggle("active", p.dataset.paymentPanel === tab)); }
-      document.querySelectorAll("[data-plan-select]").forEach(btn => btn.addEventListener("click", () => { setPlan(btn.dataset.planSelect); document.getElementById("pago").scrollIntoView({ behavior: "smooth", block: "start" }) }));
-      document.querySelectorAll("[data-payment-tab]").forEach(btn => btn.addEventListener("click", () => setPayment(btn.dataset.paymentTab)));
-      document.querySelectorAll("[data-copy]").forEach(btn => btn.addEventListener("click", async () => { const id = btn.dataset.copy, el = document.getElementById(id); if (!el) return; const original = btn.textContent; try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = "Copiado" } catch { btn.textContent = "No se pudo copiar" } setTimeout(() => { btn.textContent = original }, 1400) }));
-      setPlan("redes"); setPayment("stripe");
-    </script>
+  <script>
+    const plans = { redes: { name: "Redes Sociales Pro", price: "$10,000 MXN", copy: "Presencia constante con anuncios incluidos y un mensaje claro para activar hoy mismo.", cta: "Activar mi presencia digital", points: ["3 publicaciones semanales con diseño y copy.", "Pauta incluida para Facebook e Instagram.", "Plazo minimo de 3 meses."], stripe: "#pago", single: "#pago", wa: "Quiero activar el plan Redes Sociales Pro con MCI Latam." }, web: { name: "Web & Conversion", price: "$20,000 MXN", copy: "Sitio propio, agenda integrada y campañas de tráfico para convertir interes en citas o ventas.", cta: "Construir mi maquina de ventas", points: ["Sitio web informativo o transaccional.", "Sistema de agendamiento integrado.", "Campañas en Google o Meta."], stripe: "#pago", single: "#pago", wa: "Quiero construir mi maquina de ventas con MCI Latam." }, crm: { name: "CRM & IA Atención Oportuna", price: "$30,000 MXN", copy: "Pipeline comercial y asistente 24/7 para responder, calificar y agendar automaticamente.", cta: "Automatizar mi negocio con IA", points: ["Pipeline visual de prospecto, seguimiento, cita y referidos.", "Chatbot con IA para atencion inmediata.", "automatización para seguimiento y cierre."], stripe: "#pago", single: "#pago", wa: "Quiero automatizar mi negocio con plan CRM & IA Atención Oportuna." }, 'crm-comercial': { name: "CRM & IA Transaccional", price: "$40,000 MXN", copy: "Estrategia enfocada a lo transaccional, generando demanda directa y ventas automatizadas.", cta: "Generar ventas ahora", points: ["Cierre de transacción completo sin intervención manual.", "Campañas de conversión directa a ventas.", "Sistema CRM para seguimiento transaccional.", "Asistente IA enfocado a cobros y cierres rápidos."], stripe: "#pago", single: "#pago", wa: "Quiero generar ventas con el plan CRM & IA Transaccional." } };
+    const sumName = document.getElementById("sum-name"), sumPrice = document.getElementById("sum-price"), sumCopy = document.getElementById("sum-copy"), sumList = document.getElementById("sum-list"), sumCta = document.getElementById("sum-cta"), wa = document.getElementById("wa-link"), mName = document.getElementById("mobile-name"), mPrice = document.getElementById("mobile-price"), mCta = document.getElementById("mobile-cta"), stripePrimary = document.querySelector("[data-stripe-primary]"), stripeSecondary = document.querySelector("[data-stripe-secondary]");
+    function setPlan(key) { const p = plans[key]; document.querySelectorAll("[data-plan-card]").forEach(c => c.classList.toggle("active", c.dataset.planCard === key)); document.querySelectorAll("[data-plan-select]").forEach(b => { const on = b.dataset.planSelect === key; b.classList.toggle("btn", on); b.classList.toggle("btn-alt", !on) }); sumName.textContent = p.name; sumPrice.textContent = p.price; sumCopy.textContent = p.copy; sumCta.textContent = p.cta; mName.textContent = p.name; mPrice.textContent = p.price; mCta.textContent = p.cta; stripePrimary.textContent = p.cta; stripePrimary.href = p.stripe; stripeSecondary.href = p.single; sumList.innerHTML = ""; p.points.forEach(point => { const li = document.createElement("li"); li.textContent = point; sumList.appendChild(li) }); wa.href = `https://wa.me/5210000000000?text=${encodeURIComponent(p.wa)}`; }
+    function setPayment(tab) { document.querySelectorAll("[data-payment-tab]").forEach(b => b.classList.toggle("active", b.dataset.paymentTab === tab)); document.querySelectorAll("[data-payment-panel]").forEach(p => p.classList.toggle("active", p.dataset.paymentPanel === tab)); }
+    document.querySelectorAll("[data-plan-select]").forEach(btn => btn.addEventListener("click", () => { setPlan(btn.dataset.planSelect); document.getElementById("pago").scrollIntoView({ behavior: "smooth", block: "start" }) }));
+    document.querySelectorAll("[data-payment-tab]").forEach(btn => btn.addEventListener("click", () => setPayment(btn.dataset.paymentTab)));
+    document.querySelectorAll("[data-copy]").forEach(btn => btn.addEventListener("click", async () => { const id = btn.dataset.copy, el = document.getElementById(id); if (!el) return; const original = btn.textContent; try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = "Copiado" } catch { btn.textContent = "No se pudo copiar" } setTimeout(() => { btn.textContent = original }, 1400) }));
+    setPlan("redes"); setPayment("stripe");
+  </script>
 </body>
 
 </html>
